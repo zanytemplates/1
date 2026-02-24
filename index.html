@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aqiqah Berkah | Paket Aqiqah Terbaik</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    :root{
+      --primary: #2b5e2b;
+      --primary-light: #4a7c4a;
+      --secondary: #d49b6a;
+      --soft-bg: #fff9f0;
+      --text-dark: #2f3e2e;
+      --text-light: #f9f9f9;
+      --shadow: 0 5px 15px rgba(0,40,0,0.08);
+      --max-w: 1200px;
+    }
+    html,body{ background:#fefaf5; color:var(--text-dark); line-height:1.6; -webkit-text-size-adjust:100%; }
+    .container{ max-width:var(--max-w); margin:0 auto; padding:0 20px; }
+
+    /* HEADER */
+    header{ background:#fff; box-shadow:var(--shadow); position:sticky; top:0; z-index:1000; }
+    .navbar{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:20px; }
+    .logo h1{ font-size:1.7rem; color:var(--primary); font-weight:700; letter-spacing:-0.5px; }
+    .logo span{ display:block; font-size:0.95rem; color:var(--secondary); margin-top:2px; font-weight:400; }
+    .nav-menu{ display:flex; gap:26px; list-style:none; }
+    .nav-menu a{ text-decoration:none; color:var(--text-dark); font-weight:500; font-size:1.02rem; padding:6px 4px; transition:color .2s, border-bottom .2s; }
+    .nav-menu a:hover{ color:var(--primary); border-bottom:2px solid var(--secondary); }
+    .hamburger{ display:none; font-size:1.6rem; color:var(--primary); cursor:pointer; background:transparent; border:none; padding:8px; border-radius:8px; }
+
+    /* HERO */
+    .hero{
+      background: linear-gradient(rgba(43,94,43,0.78), rgba(43,94,43,0.78)),
+                  url('https://images.unsplash.com/photo-1604909052743-94e838986d24?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      min-height:78vh; display:flex; align-items:center; text-align:center; color:#fff; padding:40px 0;
+    }
+    .hero-content{ width:100%; }
+    .hero-content h2{ font-size:2.6rem; margin-bottom:14px; font-weight:600; line-height:1.05; }
+    .hero-content p{ font-size:1.15rem; max-width:760px; margin:0 auto 22px; opacity:0.96; color:rgba(255,255,255,0.95); }
+
+    .btn{ display:inline-block; background:var(--secondary); color:#fff; padding:12px 30px; border-radius:50px; text-decoration:none; font-weight:600; margin:6px 8px; transition:transform .12s ease, opacity .12s; border:none; cursor:pointer; }
+    .btn:active{ transform:translateY(1px); }
+    .btn-primary{ background:var(--primary); }
+    .btn-primary:hover{ background:#1e4a1e; }
+    .btn-secondary:hover{ background:#c0844c; }
+
+    /* SECTION HEADING */
+    .section-heading{ text-align:center; margin:56px 0 28px; }
+    .section-heading h3{ font-size:2rem; color:var(--primary); display:inline-block; padding-bottom:10px; position:relative; }
+    .section-heading h3::after{ content:''; position:absolute; left:50%; transform:translateX(-50%); bottom:0; width:80px; height:3px; background:var(--secondary); }
+
+    /* GRID CARDS */
+    .paket-grid, .galeri-grid, .blog-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:24px; margin-top:18px; }
+    .card{ background:#fff; border-radius:18px; box-shadow:var(--shadow); overflow:hidden; transition:transform .22s ease, box-shadow .22s; }
+    .card:hover{ transform:translateY(-6px); box-shadow:0 12px 30px rgba(0,40,0,0.08); }
+
+    .card-img{ height:160px; background: linear-gradient(145deg,#f3ede5,#e8dfd4); display:flex; align-items:center; justify-content:center; color:#7a6a5a; font-size:1.1rem; }
+    /* make icon size responsive inside card-img */
+    .card-img i{ font-size:2.6rem; color:#7a6a5a; }
+
+    .card-content{ padding:20px; }
+    .card-content h4{ font-size:1.25rem; color:var(--primary); margin-bottom:8px; }
+    .price{ font-size:1.45rem; font-weight:700; color:var(--secondary); margin:10px 0; }
+    .price small{ font-size:0.95rem; color:#666; font-weight:400; margin-left:6px; }
+
+    .features{ list-style:none; margin:12px 0; padding:0; }
+    .features li{ margin:8px 0; font-size:0.95rem; display:flex; align-items:flex-start; gap:8px; }
+    .features i{ color:var(--primary); margin-top:3px; }
+
+    .btn-wa{ background:#25D366; color:#fff; display:inline-block; padding:12px 18px; border-radius:40px; text-decoration:none; font-weight:600; width:100%; text-align:center; transition:background .18s ease; border:none; font-size:1rem; }
+    .btn-wa i{ margin-right:8px; }
+    .btn-wa:hover{ background:#128C7E; }
+
+    /* GALERI */
+    .galeri-grid{ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .galeri-item{ height:220px; border-radius:18px; background-size:cover; background-position:center; display:flex; align-items:flex-end; padding:14px; color:#fff; font-weight:600; text-shadow:0 2px 5px rgba(0,0,0,0.45); box-shadow:var(--shadow); transition:transform .2s ease; }
+    .galeri-item:hover{ transform:scale(1.02); }
+
+    /* BLOG */
+    .blog-card{ border-radius:18px; overflow:hidden; background:#fff; box-shadow:var(--shadow); }
+    .blog-img{ height:160px; background-size:cover; background-position:center; }
+    .blog-content{ padding:16px; }
+    .blog-date{ color:var(--secondary); font-size:0.88rem; margin-bottom:6px; display:flex; align-items:center; gap:8px; }
+    .blog-content h4{ font-size:1.15rem; margin-bottom:8px; color:var(--primary); }
+    .blog-content p{ color:#555; font-size:0.98rem; margin-bottom:12px; }
+
+    .read-more{ color:var(--primary); font-weight:600; text-decoration:none; }
+    .read-more:hover{text-decoration:underline;}
+
+    /* CONTACT */
+    .contact-wrapper{ display:grid; grid-template-columns: 1fr 1fr; gap:28px; background:#fff; border-radius:22px; padding:34px; box-shadow:var(--shadow); margin-bottom:48px; }
+    .contact-info h4, .contact-form h4{ font-size:1.3rem; color:var(--primary); margin-bottom:12px; }
+    .info-item{ display:flex; gap:14px; margin:16px 0; align-items:center; }
+    .info-item i{ font-size:1.25rem; background:var(--primary-light); color:#fff; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .info-item p{ font-size:1rem; margin:0; }
+
+    .social-media{ margin-top:18px; }
+    .social-icon{ display:inline-block; width:40px; height:40px; background:#f0eae2; border-radius:50%; text-align:center; line-height:40px; margin-right:10px; color:var(--primary); font-size:1.05rem; transition:all .18s; }
+    .social-icon:hover{ background:var(--primary); color:#fff; transform:translateY(-2px); }
+
+    .contact-form input, .contact-form textarea{ width:100%; padding:12px 14px; margin-bottom:14px; border:1px solid #e4e1dd; border-radius:28px; font-size:1rem; outline:none; transition:border-color .12s; }
+    .contact-form textarea{ border-radius:12px; resize:vertical; min-height:100px; padding:12px 14px; }
+    .contact-form input:focus, .contact-form textarea:focus{ border-color:var(--primary); box-shadow:0 6px 20px rgba(43,94,43,0.06); }
+
+    .contact-form .btn{ width:100%; border-radius:28px; background:var(--primary); color:#fff; font-size:1.02rem; padding:12px 16px; border:none; cursor:pointer; }
+
+    /* FOOTER */
+    footer{ background:#1e3a2e; color:#ddd; padding:34px 0 18px; text-align:center; }
+    .footer-content p{ margin:6px 0; }
+    .footer-links{ list-style:none; display:flex; justify-content:center; gap:18px; margin:14px 0; padding:0; flex-wrap:wrap; }
+    .footer-links a{ color:#ddd; text-decoration:none; font-size:0.98rem; }
+    .footer-links a:hover{ color:var(--secondary); }
+
+    /* RESPONSIVE RULES */
+    @media (max-width: 992px) {
+      .hero-content h2{ font-size:2.2rem; }
+      .hero{ min-height:70vh; padding:36px 0; }
+      .container{ padding:0 18px; }
+      .contact-wrapper{ grid-template-columns:1fr; padding:26px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu{ position:fixed; left:-100%; top:72px; width:100%; flex-direction:column; background:#fff; padding:28px 18px; gap:18px; box-shadow:0 12px 24px rgba(0,0,0,0.07); transition:left .32s cubic-bezier(.2,.9,.2,1); z-index:999; border-top-left-radius:12px; border-top-right-radius:12px; }
+      .nav-menu.active{ left:0; }
+      .hamburger{ display:block; }
+      .nav-menu a{ font-size:1.12rem; padding:10px 6px; }
+      .hero-content h2{ font-size:1.95rem; }
+      .hero-content p{ font-size:1rem; max-width:520px; }
+      .card-img{ height:140px; }
+      .blog-img{ height:140px; }
+      .galeri-item{ height:160px; }
+      .paket-grid{ gap:18px; }
+      .container{ padding:0 16px; }
+      .footer{ padding:28px 0 16px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero{ min-height:58vh; padding:28px 0; }
+      .hero-content h2{ font-size:1.6rem; }
+      .hero-content p{ font-size:0.98rem; }
+      .card-img{ height:120px; }
+      .card-content{ padding:16px; }
+      .card-content h4{ font-size:1.05rem; }
+      .price{ font-size:1.15rem; }
+      .galeri-item{ height:140px; padding:12px; font-size:0.95rem; }
+      .blog-img{ height:120px; }
+      .nav-menu{ top:64px; }
+      .hamburger{ font-size:1.4rem; }
+    }
+
+    /* small accessibility focus */
+    a:focus, button:focus, input:focus, textarea:focus{ outline:3px solid rgba(43,94,43,0.12); outline-offset:2px; }
+  </style>
+</head>
+<body>
+  <!-- HEADER / NAVIGATION -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <h1>Aqiqah Berkah</h1>
+        <span>nikmat & berkah</span>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#paket">Paket</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION (HOME) -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <h2>Aqiqah Terbaik untuk Buah Hati</h2>
+        <p>Daging berkualitas, masakan lezat, dan penyajian higienis. Pilihan paket sesuai kebutuhan keluarga.</p>
+        <a href="#paket" class="btn btn-primary">Lihat Paket</a>
+        <a href="#kontak" class="btn btn-secondary">Hubungi Kami</a>
+      </div>
+    </section>
+
+    <!-- PAKET AQIQAH -->
+    <section id="paket" class="container">
+      <div class="section-heading">
+        <h3>Paket Aqiqah</h3>
+      </div>
+      <div class="paket-grid">
+        <!-- Paket 1 -->
+        <div class="card">
+          <div class="card-img"><i class="fas fa-utensils"></i></div>
+          <div class="card-content">
+            <h4>Paket Hemat</h4>
+            <div class="price">Rp 1.750.000 <small>/ paket</small></div>
+            <ul class="features">
+              <li><i class="fas fa-check-circle"></i> 1 kambing 8-10 kg</li>
+              <li><i class="fas fa-check-circle"></i> Masak gulai / sate (60 tusuk)</li>
+              <li><i class="fas fa-check-circle"></i> Nasi box 50 porsi</li>
+              <li><i class="fas fa-check-circle"></i> Acar, sambal, kerupuk</li>
+            </ul>
+            <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20order%20Paket%20Hemat%20Aqiqah" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order via WA</a>
+          </div>
+        </div>
+        <!-- Paket 2 -->
+        <div class="card">
+          <div class="card-img"><i class="fas fa-utensils"></i></div>
+          <div class="card-content">
+            <h4>Paket Standar</h4>
+            <div class="price">Rp 2.250.000 <small>/ paket</small></div>
+            <ul class="features">
+              <li><i class="fas fa-check-circle"></i> 1 kambing 10-12 kg</li>
+              <li><i class="fas fa-check-circle"></i> Masak sate (100 tusuk) + gulai</li>
+              <li><i class="fas fa-check-circle"></i> Nasi box 80 porsi + buah</li>
+              <li><i class="fas fa-check-circle"></i> Tambahan krupuk, acar</li>
+            </ul>
+            <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20order%20Paket%20Standar%20Aqiqah" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order via WA</a>
+          </div>
+        </div>
+        <!-- Paket 3 -->
+        <div class="card">
+          <div class="card-img"><i class="fas fa-utensils"></i></div>
+          <div class="card-content">
+            <h4>Paket Lengkap</h4>
+            <div class="price">Rp 3.200.000 <small>/ paket</small></div>
+            <ul class="features">
+              <li><i class="fas fa-check-circle"></i> 2 kambing 10-12 kg</li>
+              <li><i class="fas fa-check-circle"></i> Sate (200 tusuk) + gulai + rendang</li>
+              <li><i class="fas fa-check-circle"></i> Nasi box 150 porsi + es buah</li>
+              <li><i class="fas fa-check-circle"></i> Perlengkapan pesta + delivery</li>
+            </ul>
+            <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20order%20Paket%20Lengkap%20Aqiqah" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order via WA</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI FOTO -->
+    <section id="galeri" class="container">
+      <div class="section-heading">
+        <h3>Galeri Aqiqah</h3>
+      </div>
+      <div class="galeri-grid">
+        <div class="galeri-item galeri-1" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1598515214211-89d3c73ae23c?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80');">Sate kambing muda</div>
+        <div class="galeri-item galeri-2" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1604909052743-94e838986d24?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80');">Gulai special</div>
+        <div class="galeri-item galeri-3" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1626082927385-49d97a1d2bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80');">Nasi box komplit</div>
+        <div class="galeri-item galeri-4" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80');">Proses masak higienis</div>
+        <div class="galeri-item galeri-5" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1633436374018-da8b8b7cf1ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80');">Kambing pilihan</div>
+        <div class="galeri-item galeri-6" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1623428454614-abaf00244e52?ixlib=rb-4.0.3&auto=format&fit=crop&w=872&q=80');">Dokumentasi acara</div>
+      </div>
+    </section>
+
+    <!-- BLOG / ARTIKEL -->
+    <section id="blog" class="container">
+      <div class="section-heading">
+        <h3>Blog & Tips</h3>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1604909052743-94e838986d24?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80');"></div>
+          <div class="blog-content">
+            <div class="blog-date"><i class="far fa-calendar-alt"></i> 12 Februari 2025</div>
+            <h4>Tips Memilih Kambing Aqiqah Sehat</h4>
+            <p>Pastikan kambing tidak cacat, cukup umur, dan bebas penyakit. Simak panduan lengkapnya...</p>
+            <a href="#" class="read-more">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80');"></div>
+          <div class="blog-content">
+            <div class="blog-date"><i class="far fa-calendar-alt"></i> 28 Januari 2025</div>
+            <h4>Resep Gulai Kambing Empuk & Lezat</h4>
+            <p>Daging empuk dan bumbu meresap, cocok untuk hidangan aqiqah. Yuk intip rahasia dapur kami...</p>
+            <a href="#" class="read-more">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1633436374018-da8b8b7cf1ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=870&q=80');"></div>
+          <div class="blog-content">
+            <div class="blog-date"><i class="far fa-calendar-alt"></i> 5 Januari 2025</div>
+            <h4>Keutamaan Aqiqah dalam Islam</h4>
+            <p>Aqiqah sebagai wujud syukur dan tebusan untuk anak. Simak dalil dan hikmahnya...</p>
+            <a href="#" class="read-more">Baca selengkapnya <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- KONTAK / HUBUNGI KAMI -->
+    <section id="kontak" class="container">
+      <div class="section-heading">
+        <h3>Hubungi Kami</h3>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h4>Aqiqah Berkah</h4>
+          <p style="margin-bottom: 20px;">Konsultasi gratis dan pemesanan mudah. Kami siap membantu.</p>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <p>+62 812-3456-7890</p>
+          </div>
+          <div class="info-item">
+            <i class="fab fa-whatsapp"></i>
+            <p>+62 812-3456-7890 (WA)</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <p>aqiqahberkah@example.com</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Jl. Berkah No. 10, Jakarta</p>
+          </div>
+          <div class="social-media">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h4>Kirim Pesan</h4>
+          <form id="contactForm">
+            <input type="text" placeholder="Nama Lengkap" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="4" placeholder="Tulis pesan..."></textarea>
+            <button type="submit" class="btn">Kirim Pesan</button>
+          </form>
+          <p style="margin-top: 20px; font-size: 0.9rem;">* Atau klik tombol WA di paket untuk order cepat.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2025 Aqiqah Berkah. Semua hak dilindungi.</p>
+      <ul class="footer-links">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#paket">Paket</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+      <p><i class="fas fa-heart" style="color: #d49b6a;"></i> Aqiqah penuh berkah untuk buah hati</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Toggle mobile menu (improved accessibility + close on outside click + ESC)
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    function openMenu() {
+      navMenu.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      // disable body scroll when menu open on small screens
+      if (window.innerWidth <= 768) document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      navMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      if (navMenu.classList.contains('active')) closeMenu();
+      else openMenu();
+    });
+
+    // Tutup menu saat link diklik (untuk mobile)
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        // delay small to allow smooth scroll to start
+        setTimeout(() => closeMenu(), 120);
+      });
+    });
+
+    // close menu on click outside (mobile)
+    document.addEventListener('click', function(e){
+      const target = e.target;
+      if (window.innerWidth <= 768) {
+        if (!navMenu.contains(target) && !hamburger.contains(target) && navMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      }
+    });
+
+    // close menu with ESC
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+
+    // Smooth scroll for anchor links (works for internal anchors)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          // close mobile menu first (for narrow screens)
+          if (window.innerWidth <= 768) closeMenu();
+          // smooth scroll with slight offset for sticky header
+          const headerOffset = Math.min(80, Math.round(window.innerWidth / 30)); // adaptive offset
+          const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Simple contact form demo
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Terima kasih, pesan Anda telah terkirim (demo). Kami akan segera menghubungi Anda via WhatsApp atau email.');
+      this.reset();
+    });
+  </script>
+
+  <!-- Catatan: Gambar dari Unsplash digunakan sebagai placeholder demonstrasi. Semua hak milik fotografer masing-masing. -->
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Aqiqah Berkah</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+:root{
+  --primary:#2b5e2b;
+  --primary-light:#4a7c4a;
+  --secondary:#d49b6a;
+  --text-dark:#2f3e2e;
+  --shadow:0 5px 15px rgba(0,40,0,0.08);
+  --max-w:1200px;
+}
+
+body{background:#fefaf5;color:var(--text-dark);line-height:1.6}
+.container{max-width:var(--max-w);margin:auto;padding:0 20px}
+
+/* HEADER */
+header{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo h1{font-size:1.6rem;color:var(--primary)}
+.nav-menu{display:flex;gap:26px;list-style:none}
+.nav-menu a{text-decoration:none;color:var(--text-dark);font-weight:500}
+.nav-menu a.active{color:var(--primary);border-bottom:2px solid var(--secondary)}
+.hamburger{display:none;font-size:1.6rem;color:var(--primary);background:none;border:none}
+
+/* HERO BLOG */
+.blog-hero{
+  background:linear-gradient(rgba(43,94,43,.8),rgba(43,94,43,.8)),
+  url('https://images.unsplash.com/photo-1623428454614-abaf00244e52?auto=format&fit=crop&w=1400&q=80') center/cover;
+  padding:80px 0;
+  text-align:center;
+  color:#fff;
+}
+.blog-hero h2{font-size:2.4rem;margin-bottom:10px}
+.blog-hero p{opacity:.9}
+
+/* BLOG GRID */
+.blog-section{padding:60px 0}
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:28px;
+}
+.blog-card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+.blog-card:hover{
+  transform:translateY(-6px);
+}
+.blog-img{
+  height:180px;
+  background-size:cover;
+  background-position:center;
+}
+.blog-content{padding:18px}
+.blog-date{
+  font-size:.9rem;
+  color:var(--secondary);
+  margin-bottom:6px;
+}
+.blog-content h4{
+  font-size:1.2rem;
+  color:var(--primary);
+  margin-bottom:8px;
+}
+.blog-content p{
+  font-size:.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.read-more{
+  text-decoration:none;
+  font-weight:600;
+  color:var(--primary);
+}
+.read-more:hover{text-decoration:underline}
+
+/* PAGINATION */
+.pagination{
+  text-align:center;
+  margin-top:40px;
+}
+.pagination a{
+  display:inline-block;
+  padding:10px 16px;
+  margin:4px;
+  background:#fff;
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  text-decoration:none;
+  color:var(--primary);
+  font-weight:500;
+}
+.pagination a.active{
+  background:var(--primary);
+  color:#fff;
+}
+
+/* FOOTER */
+footer{
+  background:#1e3a2e;
+  color:#ddd;
+  text-align:center;
+  padding:30px 0;
+  margin-top:60px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-menu{
+    position:fixed;
+    left:-100%;
+    top:70px;
+    flex-direction:column;
+    background:#fff;
+    width:100%;
+    padding:30px;
+    transition:.3s;
+  }
+  .nav-menu.active{left:0}
+  .hamburger{display:block}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">
+      <h1>Aqiqah Berkah</h1>
+    </div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="index.html#paket">Paket</a></li>
+      <li><a href="index.html#galeri">Galeri</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="index.html#kontak">Kontak</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<section class="blog-hero">
+  <div class="container">
+    <h2>Blog & Edukasi Aqiqah</h2>
+    <p>Tips, panduan, dan informasi seputar aqiqah</p>
+  </div>
+</section>
+
+<section class="container blog-section">
+  <div class="blog-grid">
+
+    <article class="blog-card">
+      <div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1604909052743-94e838986d24?auto=format&fit=crop&w=870&q=80')"></div>
+      <div class="blog-content">
+        <div class="blog-date"><i class="far fa-calendar-alt"></i> 12 Februari 2025</div>
+        <h4>Keutamaan Aqiqah dalam Islam</h4>
+        <p>Pelaksanaan aqiqah sebagai bentuk rasa syukur dan sunnah muakkad yang dianjurkan...</p>
+        <a href="artikel1.html" class="read-more">Baca Selengkapnya →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?auto=format&fit=crop&w=1064&q=80')"></div>
+      <div class="blog-content">
+        <div class="blog-date"><i class="far fa-calendar-alt"></i> 28 Januari 2025</div>
+        <h4>Tips Memilih Kambing Aqiqah Sehat</h4>
+        <p>Pastikan kambing cukup umur, sehat, dan tidak cacat agar ibadah sah...</p>
+        <a href="artikel2.html" class="read-more">Baca Selengkapnya →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-img" style="background-image:url('https://images.unsplash.com/photo-1633436374018-da8b8b7cf1ce?auto=format&fit=crop&w=870&q=80')"></div>
+      <div class="blog-content">
+        <div class="blog-date"><i class="far fa-calendar-alt"></i> 5 Januari 2025</div>
+        <h4>Harga Aqiqah Terbaru 2025</h4>
+        <p>Simak kisaran harga aqiqah terbaru lengkap dengan tips memilih paket...</p>
+        <a href="artikel3.html" class="read-more">Baca Selengkapnya →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="pagination">
+    <a href="#" class="active">1</a>
+    <a href="#">2</a>
+    <a href="#">Next</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Aqiqah Berkah - Blog Edukasi</p>
+  </div>
+</footer>
+
+<script>
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
